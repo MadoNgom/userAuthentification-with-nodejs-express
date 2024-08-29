@@ -46,7 +46,7 @@ export class UserController {
     }
 
     try {
-      const user = await this.userService.filterUser({ email });
+      const user = await this.userService.getByFilter({ email });
 
       if (!user) {
         return res.status(401).json({ message: "Adresse email incorrecte." });
